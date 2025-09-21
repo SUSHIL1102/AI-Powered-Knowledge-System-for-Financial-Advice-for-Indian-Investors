@@ -57,3 +57,24 @@ This implementation primarily covers **Phase 5: Fine-Tuning Using LoRA**, but in
 - Python 3.8+
 - Jupyter Notebook or Google Colab for running `GenAI.ipynb`.
 - Required libraries (install via `pip`):
+
+## Usage
+
+### Running the Notebook
+- Execute cells sequentially in `GenAI.ipynb`.
+- **Data Preparation**: Loads a small dataset of financial Q&A pairs.
+- **Model Fine-Tuning**: Trains FLAN-T5 with LoRA adapters (configurable epochs, batch size).
+- **Inference**: Use the `gen()` or `generate_answer()` function to query the model.
+Example:
+```python
+prompt = "Instruction: Answer for Indian investors, 2–4 sentences.\nQuestion: What are the tax implications of selling ELSS units in India?\nAnswer:"
+print(generate_answer(prompt))
+
+Example Outputs
+
+Query: "What are the tax implications of selling ELSS units in India?"
+Expected: A 2-4 sentence response on long-term capital gains tax (post-fine-tuning improves relevance).
+Query: "Is gold a good hedge against inflation for Indian investors?"
+Expected: Reasoning on gold's role in inflation hedging.
+
+Note: Outputs may vary based on training; the notebook includes test prompts.
